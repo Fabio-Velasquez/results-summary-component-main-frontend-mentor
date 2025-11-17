@@ -1,0 +1,24 @@
+:root {
+    --result-container-bg-top-gradient: hsl(252, 100%, 67%);
+    --result-container-bg-bottom-gradient: hsl(241, 81%, 54%);
+    --card-font-family: Hanken Grotesk;
+}
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #ECF2FF;
+    font-family: var(--card-font-family), serif;
+}
+
+.results-component {
+    display: flex;
+    flex-direction: row;
+    min-width: 375px;
+    width: 40vw;
+    height: 40vh;
+}
+.result-score-container {
+    background: linear-gradient(to bottom, var(--result-container-bg-top-gradient), var(--result-container-bg-bottom-gradient)) ;
+}
