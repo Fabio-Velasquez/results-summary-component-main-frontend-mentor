@@ -1,6 +1,13 @@
+h1, p {
+    margin:0;
+}
 :root {
     --result-container-bg-top-gradient: hsl(252, 100%, 67%);
     --result-container-bg-bottom-gradient: hsl(241, 81%, 54%);
+    --result-container-circle-top-gradient: hsla(256, 72%, 46%, 1);
+    --result-container-circle-bottom-gradient: hsla(241, 72%, 46%, 0);
+    --result-score-faded-white-text-color: hsl(241, 100%, 89%);
+    --result-header-score-text-color: hsl(0, 0%, 100%);
     --card-font-family: Hanken Grotesk;
 }
 body {
@@ -13,12 +20,63 @@ body {
 }
 
 .results-component {
+    background-color: var(--result-header-score-text-color);
     display: flex;
     flex-direction: row;
     min-width: 375px;
-    width: 40vw;
-    height: 40vh;
+    width:37vw;
+    height: 50vh;
 }
 .result-score-container {
+    display: flex;
+    border-radius: 35px;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
     background: linear-gradient(to bottom, var(--result-container-bg-top-gradient), var(--result-container-bg-bottom-gradient)) ;
+}
+.result-score-header {
+     color: var(--result-score-faded-white-text-color);
+ }
+
+.result-score-container {
+    color: var(--result-header-score-text-color);
+}
+.result-score-circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    margin: 1rem 0 .5rem 0;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--result-container-circle-top-gradient), var(--result-container-circle-bottom-gradient)) ;
+
+}
+
+.result-score-earned > h1 {
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.result-score-earned > p {
+    font-weight: 500;
+    opacity: 50%;
+}
+.result-score-earned > p {
+    color: var(--result-score-faded-white-text-color);
+}
+.result-score-affirmation {
+    font-size: 1.7rem;
+    margin: .5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.result-stat-blurb {
+    color: var(--result-score-faded-white-text-color);
+    width: 65%;
+    margin: .5rem 0 2rem 0;
+    text-align: center;
 }
