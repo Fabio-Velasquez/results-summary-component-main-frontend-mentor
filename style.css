@@ -43,10 +43,7 @@ body {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        /*background: transparent;*/
         background-color: var(--result-header-score-text-color);
-
-
     }
 }
 .result-score-container {
