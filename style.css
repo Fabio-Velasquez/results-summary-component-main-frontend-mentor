@@ -1,3 +1,4 @@
+
 h1, p, h3 {
     margin:0;
 }
@@ -18,20 +19,35 @@ h1, p, h3 {
 body {
     display: flex;
     height: 100vh;
+
     align-items: center;
     justify-content: center;
     background-color: #ECF2FF;
     font-family: var(--card-font-family), serif;
+    @media (max-width: 375px) {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--result-header-score-text-color);
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .results-component {
     background-color: var(--result-header-score-text-color);
     display: flex;
     flex-direction: row;
-    min-width: 375px;
-    width:37vw;
-    height: 50vh;
     border-radius: 35px;
+    @media (max-width: 375px) {
+        width:100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        /*background: transparent;*/
+        background-color: var(--result-header-score-text-color);
+
+
+    }
 }
 .result-score-container {
     display: flex;
@@ -41,9 +57,14 @@ body {
     width: 50%;
     align-items: center;
     background: linear-gradient(to bottom, var(--result-container-bg-top-gradient), var(--result-container-bg-bottom-gradient)) ;
+    @media (max-width: 375px) {
+        width: 100%;
+        border-radius: 0 0 35px 35px;
+    }
 }
 .result-score-header {
-     color: var(--result-score-faded-white-text-color);
+    font-size: 1rem;
+    color: var(--result-score-faded-white-text-color);
  }
 
 .result-score-container {
@@ -89,8 +110,15 @@ body {
 .result-summary-container {
     display: flex;
     flex-direction: column;
+    background-color: var(--result-header-score-text-color);
+    border-radius: 35px;
+
     align-items: center;
     width: 50%;
+    @media (max-width: 375px) {
+        width: 100%;
+
+    }
 }
 .summary-header {
     font-weight: 500;
@@ -166,7 +194,10 @@ body {
     border-radius: 25px;
     font-weight: 500;
     color: var(--result-header-score-text-color);
-
+    @media (max-width: 375px) {
+        padding: 1rem .5rem;
+        margin-bottom: 1.5rem;
+    }
 }
 .continue-button:hover {
     background: linear-gradient(
