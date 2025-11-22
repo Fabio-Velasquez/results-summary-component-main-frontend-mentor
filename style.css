@@ -1,4 +1,4 @@
-h1, p {
+h1, p, h3 {
     margin:0;
 }
 :root {
@@ -8,6 +8,11 @@ h1, p {
     --result-container-circle-bottom-gradient: hsla(241, 72%, 46%, 0);
     --result-score-faded-white-text-color: hsl(241, 100%, 89%);
     --result-header-score-text-color: hsl(0, 0%, 100%);
+    --result-reaction-score-bg-color: hsl(0, 100%, 67%);
+    --result-memory-score-bg-color: hsl(39, 100%, 56%);
+    --result-visual-score-bg-color: hsl(234, 85%, 45%);
+    --result-verbal-score-bg-color: hsl(166, 100%, 37%);
+    --result-summary-score-earned-color: hsl(224, 30%, 27%);
     --card-font-family: Hanken Grotesk;
 }
 body {
@@ -26,6 +31,7 @@ body {
     min-width: 375px;
     width:37vw;
     height: 50vh;
+    border-radius: 35px;
 }
 .result-score-container {
     display: flex;
@@ -71,7 +77,7 @@ body {
 .result-score-affirmation {
     font-size: 1.7rem;
     margin: .5rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 .result-stat-blurb {
@@ -79,4 +85,93 @@ body {
     width: 65%;
     margin: .5rem 0 2rem 0;
     text-align: center;
+}
+.result-summary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.summary-header {
+    font-weight: 500;
+    margin: 2.5rem 0 1.5rem 0;
+    text-decoration: none;
+    text-align: left;
+    width: 90%;
+    color: #1A2340;
+    font-size: 1rem;
+}
+.summary-broken-down-scores {
+    width: 90%;
+
+}
+.skill-score {
+    width: 90%;
+    background-color: color-mix(in srgb, var(--result-reaction-score-bg-color) 5%, transparent);
+    display: flex;
+    color: var(--result-reaction-score-bg-color);
+    font-weight: 500;
+    padding: 15px 10px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    justify-content: space-between;
+
+}
+.skill-score:nth-child(2) {
+    background-color: color-mix(in srgb, var(--result-memory-score-bg-color) 5%, transparent);
+    color: var(--result-memory-score-bg-color);
+}
+
+.skill-score:nth-child(3) {
+    background-color: color-mix(in srgb, var(--result-verbal-score-bg-color) 5%, transparent);
+    color: var(--result-verbal-score-bg-color);
+}
+
+.skill-score:nth-child(4) {
+    background-color: color-mix(in srgb, var(--result-visual-score-bg-color) 5%, transparent);
+    color: var(--result-visual-score-bg-color);
+}
+
+.image-container {
+    vertical-align: middle;
+    line-height: 0;
+    margin-right: 4px;
+    display: inline-block;
+}
+.image-container >span{
+    line-height: 0;
+    display: inline-block;
+}
+.skill-name > p{
+    line-height: 0;
+    display: inline-block;
+}
+.actual-score {
+    font-weight: 700;
+}
+.actual-score-earned {
+    color: var(--result-summary-score-earned-color);
+}
+.max-score {
+    margin-left: 4px;
+    color: hsla(0, 0%, 45%, 0.5);
+}
+
+.continue-button {
+    background-color: hsl(224, 30%, 27%);
+    width: 70%;
+    text-align: center;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+    font-weight: 500;
+    color: var(--result-header-score-text-color);
+
+}
+.continue-button:hover {
+    background: linear-gradient(
+                to bottom,
+                var(--result-container-bg-top-gradient),
+                var(--result-container-bg-bottom-gradient)
+                );
 }
